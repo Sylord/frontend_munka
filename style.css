@@ -1,0 +1,303 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+body
+{
+    width:100%;
+    height:100%;
+	max-width:1200px;
+    margin:0 auto;
+    padding:0;
+	background:#B6B6B6;	
+	font-family:'Roboto Condensed', sans-serif;
+}
+
+#container
+{
+	background:#F0F0f0;
+	border:1px solid black;
+	border-top:none;
+	border-bottom:none;
+	width:80%;
+	overflow:hidden;
+	margin:0 auto;
+	min-width:480px;
+}   
+
+header
+{
+	width:100%;
+	height:200px;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	float:left;
+	background:url('pics/header_bg.jpg') repeat-x; /* #8E0BA5;*/
+}
+
+h1
+{
+	margin:20px 0 0 0;
+	padding:20px;
+	width:100%;
+	float:left;
+	background:url('pics/h1_bg.jpg') repeat-x;/* #B6B6B6;*/
+	position:relative;
+	/*background: #BBB;*/
+	border-bottom:2px solid white;
+	border-top:2px solid black;
+	opacity:0.85;
+}
+
+h2
+{
+	font-weight:normal;
+	font-size:13pt;
+	padding:18px 0 10px 20px;
+	float:left;
+	margin:0;
+	color:white;
+}
+
+h2.title
+{
+	color:black;
+}
+
+.main_bg
+{
+	width:80%;
+	max-width:960px;
+	min-width:480px;
+	height:200px;
+	background:url(./pics/main_bg.png) no-repeat center right;
+	background-size:contain;
+	margin:0;
+	padding:0;
+	z-index:3;
+	position:absolute;
+}
+
+menu
+{
+	position:absolute;
+	float:left;
+	margin:165px 0 0 0;
+	padding:0;
+	z-index:4;
+	min-width:480px;
+	width:80%;
+	max-width:960px;
+	background:#B6B6B6;
+	border-top:2px solid white;
+	border-bottom:2px solid black;
+}
+
+menu ul
+{
+	margin:0; padding:0; list-style:none;
+	display:table;
+	float:right;
+}
+
+menu ul li
+{
+	display:table-cell;
+	padding:3px 6px;
+	margin:0;
+	text-align:center;
+}
+
+menu ul li:hover
+{
+	background:#8E0BA5;
+	color:#b6b6b6;
+}
+
+menu ul li a:link, menu ul li a:visited
+{
+	color:#330C39;
+	text-decoration:none;
+}
+
+menu ul li a:hover, menu ul li a:active
+{
+	color:#fff;
+}
+
+video, article, ul.main_list
+{
+	margin:20px;
+	float:left;
+	text-align:justify;
+}
+
+ul.main_list li
+{
+	list-style-image:url('./pics/check.jpg');
+	padding-top:5px;
+}
+
+footer
+{
+	background:#8E0BA5;
+	padding:10px;
+	border-top: 2px solid black;
+	border-bottom: 1px solid black;
+	display:table;
+	width:100%;
+	font-size:10pt;
+	color:white;
+}
+
+footer ul
+{
+	display:table-cell;
+	padding:10px;
+	margin:0;
+	list-style-type:square;
+}
+
+footer ul span
+{
+	font-size:12pt;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+
+footer ul li
+{
+	width:80%;
+	border-bottom:1px solid #b6b6b6;
+}
+
+.cont
+{
+	width:100%;
+	overflow:hidden;
+	display:table;
+	padding:10px;
+}
+
+.rot-cont
+{
+    width:215px;
+    display:table-cell;
+	float:left;
+    margin:10px; 
+	border:1px solid purple;
+	border-radius:10px;
+	background:#B6B6B6;
+	box-shadow:0 0 10px black;
+	cursor:pointer;
+}
+   
+.rotate-div
+{
+    width:210px;
+	height:210px;
+    background-size:contain;
+}
+
+.rotate-div img
+{
+	transition:width 0.5s, height 0.5s;
+	-webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s;
+}
+        
+.rotate-div img:hover
+{
+    width:240px;
+    height:240px;
+	transform:rotate(5deg);
+	-webkit-transform:rotate(5deg);	
+}
+        
+
+        
+.dark-back
+{
+    position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	z-index: 9999;
+	background-color: black;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+	display: none;
+}
+
+.front-img
+{
+	display:none;
+}
+        
+.rot-img
+{
+    border:none;
+	text-align:center;
+	width:215px;
+	height:215px;
+}
+        
+.front-img
+{
+    background-repeat: no-repeat;
+    background-position:center center;
+    width:80%;
+    height:80%;
+    background-size:contain;
+    position:absolute;
+	outline:
+}
+
+#address
+{
+	width:350px;
+	border:1px solid black;
+	padding:2px;
+	border-radius:5px;
+}
+
+.pages
+{
+	margin:20px;
+	line-height:2;
+}
+
+.pages ul
+{
+	list-style:none;
+	display:table;
+	margin:0;
+	padding:0;
+}
+
+.pages ul li
+{
+	text-align:center;
+	width:60px;
+	margin:10px;
+	display:table-cell;
+	border-bottom:5px solid #A5A5A5;
+	font-size:10pt;
+}
+
+.pages ul li.act
+{
+	border-bottom:5px solid purple;
+	font-weight:bold;
+}
+
+.pages ul li:hover
+{
+	border-bottom:5px solid purple;
+}
+
+.pages ul li a
+{
+	color:purple;
+	text-decoration:none;
+}
+
+
+
+

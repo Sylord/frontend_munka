@@ -1,0 +1,146 @@
+﻿<!DOCTYPE>
+<html lang="hu" >
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+	
+    <title>Kapcsolat</title>
+	
+	<link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+     <script type="text/javascript">
+
+	var geocoder;
+    var map;
+    var marker;
+
+    function initialize() {
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(47.534153, 19.034908);
+        var mapOptions = {
+            zoom: 14,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		
+		codeAddress();
+    }
+
+    function codeAddress() {
+
+        if (marker != null) {
+            marker.setMap();
+        }
+
+        var address = document.getElementById('address').value;
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                map.setCenter(results[0].geometry.location);
+
+                marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</head>
+<body onload="initialize()">
+
+<div id="container">
+
+	<header>
+
+		<h1>Elit Car Kft.</h1>
+		<h2>Elit autó kereskedés</h2>
+
+		<div class="main_bg"></div>
+		
+		<menu>
+			<ul>
+				<li><a href="index.html">Főoldal</a></li>
+				<li><a href="galeria.html">Galéria</a></li>
+				<li><a href="galeria.html">Hírek</a></li>
+				<li><a href="galeria.html">Újdonságok</a></li>
+				<li><a href="galeria.html">Partnereink</a></li>
+				<li><a href="kapcsolat.html">Kapcsolat</a></li>
+			</ul>		
+		</menu>		
+	</header>
+
+<section style="width:100%;">
+
+	<article style="width:40%;min-width480px;text-align:left;">
+		<ul><h3>Elérhetőségek:</h3>
+		<li>Cég neve: Driverless Car Kft.</li>
+	    <li>Cím: H-1024 Budapest, Batthyány tér 1.</li>
+		<li>Tel.: 06-1 / 123-4567</li>
+		<li>E-mail: info@driverlesscarkft.hu</li>
+		</ul>
+		
+		
+		<ul><h3>Megközelítés:</h3>
+			<li>Autó: Bem rakpart</li>
+			<li>Busz: 160, 260, 86, 11</li>
+			<li>Villamos: 19, 41</li>
+			<li>HÉV: H5</li>
+			<li>Metró: M2</li>
+		</ul>
+		
+		<ul><h3>Nyitvatartás:</h3>
+			<li>Hétfő-Péntek: 8:00 - 20:00</li>
+			<li>Szombat: 8:00 - 14:00</li>
+		</ul>
+	</article>
+
+	<article style="width:50%">Keresés:
+		<input id="address" type="textbox" value="Budapest, Batthyányi tér 1.">
+		<input type="button" value="Ugrás" onclick="codeAddress()">
+	</article><br />
+	
+	<div id="map-canvas" style="width:55%;height:400px;min-width:480px;border:1px solid black"></div>
+	
+</section>
+
+
+
+
+
+<footer>
+		<ul><span>Lorem</span>
+			<li>Lorem ipsum dolor</li>
+			<li>Duis sit amet</li>
+			<li>Nullam sed elit</li>
+		</ul>
+		
+		<ul><span>Ipsum</span>
+			<li>Lorem ipsum dolor</li>
+			<li>Duis sit amet</li>
+			<li>Nullam sed elit</li>
+		</ul>
+		
+		<ul><span>Dolor</span>
+			<li>Lorem ipsum dolor</li>
+			<li>Duis sit amet</li>
+			<li>Nullam sed elit</li>
+		</ul>
+		
+		<ul><span>Nullam</span>
+			<li>Lorem ipsum dolor</li>
+			<li>Duis sit amet</li>
+			<li>Nullam sed elit</li>
+		</ul>
+	</footer>
+
+
+</div>
+</body>
+</html>
